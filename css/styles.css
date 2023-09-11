@@ -601,7 +601,11 @@ a {
   --padding-vertical: 6rem;
   padding: var(--padding-vertical) 2rem;
 
+}
+
+.block__header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .block__heading {
