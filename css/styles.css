@@ -15,6 +15,12 @@
 }
 
 /*typography*/
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 html {
   font-size: 16px;
 }
@@ -44,6 +50,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -128,7 +135,7 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-headings);
+  
 }
 
 .list--inline .list__item {
@@ -139,6 +146,7 @@ a {
 .list--tick {
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
+  color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -170,7 +178,6 @@ a {
 
 .icon--white {
   fill: #fff;
-  ;
 }
 
 .icon-container {
@@ -272,7 +279,6 @@ a {
   font-size: 2rem;
   outline: 0;
   padding: 1.5rem 3.5rem;
-
 }
 
 ::placeholder {
@@ -283,7 +289,6 @@ a {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   display: flex;
-
 }
 
 .input-group .btn {
@@ -299,7 +304,7 @@ a {
 @media screen and (min-width: 1024px) {
   .input {
     font-size: 1.5rem;
-  }  
+  }
 }
 
 /* Cards */
@@ -310,10 +315,10 @@ a {
   overflow: hidden;
 }
 
-.card__header, 
+.card__header,
 .card__body {
   padding: 2rem 3rem;
-} 
+}
 
 .card--primary .card__header {
   background: var(--color-primary);
@@ -322,7 +327,6 @@ a {
 .card--secondary .card__header {
   background: var(--color-secondary);
   color: #fff;
-
 }
 
 .card--primary .badge--primary {
@@ -393,18 +397,17 @@ a {
   font-weight: 300;
   letter-spacing: 1px;
   display: block;
-
 }
 
 .plan .list__item {
   margin-bottom: 2rem;
 }
 
-
 /* Media */
 
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -452,7 +455,7 @@ a {
 
 .quote__line {
   position: relative;
-  bottom: 10px; 
+  bottom: 10px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -507,7 +510,7 @@ a {
   right: -32px;
 }
 
-@media  screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .testimonial .quote,
   .testimonial .quote__author {
     font-size: 2.4rem;
@@ -517,7 +520,6 @@ a {
     margin-left: 6rem;
   }
 }
-
 
 /* Callouts */
 
@@ -546,7 +548,7 @@ a {
   text-align: center;
 }
 
-@media  screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .callout .grid--1x2 {
     grid-template-columns: 1fr auto;
   }
@@ -565,7 +567,7 @@ a {
 .collapsible__header {
   display: flex;
   justify-content: space-between;
-} 
+}
 
 .collabsible__heading {
   margin-top: 0;
@@ -598,7 +600,7 @@ a {
 .block {
   --padding-vertical: 6rem;
   padding: var(--padding-vertical) 2rem;
-  
+
   text-align: center;
 }
 
@@ -611,18 +613,23 @@ a {
   color: #7b858b;
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #fff;
 }
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 /* Navigation bar */
@@ -644,7 +651,6 @@ a {
 .nav__item {
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #222;
-  
 }
 
 .nav__item > a {
@@ -688,10 +694,7 @@ a {
 
 /* Hero */
 
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 
-}
 
 .hero__tagline {
   font-size: 2rem;
@@ -717,7 +720,7 @@ a {
 /* Domain Block */
 
 .block-domain .input-group {
-  box-shadow: 0 0 30px 20px #e6ebee ;
+  box-shadow: 0 0 30px 20px #e6ebee;
   border: 0;
   margin: 4rem auto;
   max-width: 670px;
@@ -732,7 +735,6 @@ a {
   justify-items: center;
   max-width: 700px;
   margin: 0 auto;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -774,6 +776,24 @@ a {
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
+  }
 }
 
+/* Showcase Block */
+
+.block-showcase__image > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+  .block-showcase__image { 
+    justify-self: end;
+  }
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
+  }
 }
